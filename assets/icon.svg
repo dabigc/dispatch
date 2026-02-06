@@ -1,129 +1,52 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
   <defs>
-    <!-- Background gradient - purple to orange glow -->
-    <radialGradient id="bgGlow" cx="30%" cy="30%" r="70%">
-      <stop offset="0%" stop-color="#9b59b6" stop-opacity="0.6"/>
-      <stop offset="50%" stop-color="#8e44ad" stop-opacity="0.4"/>
-      <stop offset="100%" stop-color="#e67e22" stop-opacity="0.3"/>
-    </radialGradient>
-    
-    <!-- Shield gradient - frosted glass effect -->
-    <linearGradient id="shieldGlass" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.25"/>
-      <stop offset="40%" stop-color="#d8b4e2" stop-opacity="0.15"/>
-      <stop offset="70%" stop-color="#f5d5c8" stop-opacity="0.2"/>
-      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.1"/>
+    <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7B2D8E"/>
+      <stop offset="100%" stop-color="#E86A33"/>
     </linearGradient>
-    
-    <!-- Shield border gradient -->
-    <linearGradient id="shieldBorder" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#c9a0dc" stop-opacity="0.8"/>
-      <stop offset="50%" stop-color="#e8c4a0" stop-opacity="0.6"/>
-      <stop offset="100%" stop-color="#f5cba7" stop-opacity="0.8"/>
-    </linearGradient>
-    
-    <!-- Claw gradient - purple to orange -->
-    <linearGradient id="clawGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#9b59b6" stop-opacity="0.9"/>
-      <stop offset="50%" stop-color="#c49bd4" stop-opacity="0.7"/>
-      <stop offset="100%" stop-color="#e67e22" stop-opacity="0.85"/>
-    </linearGradient>
-    
-    <!-- Claw highlight -->
-    <linearGradient id="clawHighlight" x1="20%" y1="0%" x2="80%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.5"/>
-      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
-    </linearGradient>
-    
-    <!-- Soft glow filter -->
-    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-    
-    <!-- Glass blur filter -->
-    <filter id="glassBlur" x="-10%" y="-10%" width="120%" height="120%">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="2"/>
-    </filter>
   </defs>
   
-  <!-- Background glow -->
-  <ellipse cx="256" cy="280" rx="200" ry="220" fill="url(#bgGlow)" filter="url(#softGlow)"/>
-  
-  <!-- Shield shape - frosted glass -->
+  <!-- Shield -->
   <path 
-    d="M256 56 L432 120 L432 260 C432 360 340 440 256 472 C172 440 80 360 80 260 L80 120 Z"
-    fill="url(#shieldGlass)"
-    stroke="url(#shieldBorder)"
-    stroke-width="3"
-    filter="url(#glassBlur)"
-  />
-  
-  <!-- Shield inner highlight -->
-  <path 
-    d="M256 72 L416 130 L416 258 C416 348 332 420 256 450 C180 420 96 348 96 258 L96 130 Z"
-    fill="none"
-    stroke="url(#shieldBorder)"
-    stroke-width="1"
-    stroke-opacity="0.4"
-  />
-  
-  <!-- Crab claw - main body/arm -->
-  <path 
-    d="M180 320 
-       C160 300 150 260 170 220
-       C185 190 210 180 240 185
-       L260 200
-       C230 210 210 240 220 280
-       C225 300 210 315 180 320 Z"
-    fill="url(#clawGradient)"
-    filter="url(#softGlow)"
-  />
-  
-  <!-- Crab claw - upper pincer -->
-  <path 
-    d="M240 185
-       C270 175 300 180 330 210
-       C355 240 350 270 330 290
-       L300 270
-       C310 255 305 235 285 220
-       C270 210 255 210 240 215
+    d="M256 48
+       L440 112
+       L440 256
+       C440 368 344 448 256 480
+       C168 448 72 368 72 256
+       L72 112
        Z"
-    fill="url(#clawGradient)"
-    filter="url(#softGlow)"
+    fill="url(#shieldGradient)"
   />
   
-  <!-- Crab claw - lower pincer -->
-  <path 
-    d="M260 200
-       L280 220
-       C295 240 300 260 285 280
-       C275 295 255 300 235 290
-       L245 265
-       C255 270 270 265 275 255
-       C280 245 275 235 265 225
-       Z"
-    fill="url(#clawGradient)"
-    filter="url(#softGlow)"
-  />
-  
-  <!-- Claw highlights -->
-  <path 
-    d="M185 300 C175 280 175 250 190 225 C200 210 215 200 230 200"
-    fill="none"
-    stroke="url(#clawHighlight)"
-    stroke-width="6"
-    stroke-linecap="round"
-  />
-  
-  <path 
-    d="M270 195 C295 190 315 200 330 225"
-    fill="none"
-    stroke="url(#clawHighlight)"
-    stroke-width="4"
-    stroke-linecap="round"
-  />
+  <!-- Claw - simplified lobster/crab claw shape -->
+  <g fill="#FFFFFF">
+    <!-- Arm segment -->
+    <path d="M200 340
+             C175 320 165 280 175 240
+             C185 200 215 175 255 175
+             L265 200
+             C235 200 215 220 210 250
+             C205 280 215 310 230 325
+             Z"/>
+    
+    <!-- Upper pincer -->
+    <path d="M255 175
+             C295 165 335 180 365 215
+             C385 245 380 280 355 305
+             L330 280
+             C345 260 340 235 320 215
+             C300 195 275 190 255 200
+             Z"/>
+    
+    <!-- Lower pincer -->
+    <path d="M265 200
+             C275 195 290 200 305 220
+             C320 240 320 265 305 285
+             C290 305 265 310 245 295
+             L260 270
+             C270 275 280 270 285 260
+             C290 250 285 240 275 230
+             L265 200
+             Z"/>
+  </g>
 </svg>
