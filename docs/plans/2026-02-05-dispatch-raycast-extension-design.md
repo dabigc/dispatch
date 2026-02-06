@@ -263,4 +263,6 @@ dispatch/
 
 ## Icon
 
-Style: To be determined — should evoke "dispatch", command center, or fleet coordination. Options: radio waves, send arrow, command badge.
+**Finalized:** Circular purple badge with golden crab claw and radio wave arcs — evokes dispatch/communication with crustacean identity.
+
+![Icon](../../assets/icon-circular-v1.png)
