@@ -25,7 +25,7 @@ This plan breaks down the Dispatch Raycast extension implementation into 2-5 min
 ## Phase 1: Project Setup & Infrastructure
 
 ### Task 1.1: Initialize Raycast Extension Project
-**Agent:** generic-subagent  
+**Agent:** raycast-builder  
 **Time:** 3 minutes  
 **Steps:**
 1. Run `npm create @raycast/extension@latest` in dispatch repo root
@@ -51,7 +51,7 @@ This plan breaks down the Dispatch Raycast extension implementation into 2-5 min
 ---
 
 ### Task 1.2: Create TypeScript Type Definitions
-**Agent:** generic-subagent  
+**Agent:** typescript-architect  
 **Time:** 4 minutes  
 **Steps:**
 1. Create `src/lib/types.ts`
@@ -102,7 +102,7 @@ This plan breaks down the Dispatch Raycast extension implementation into 2-5 min
 ---
 
 ### Task 1.3: Implement Logger Utility
-**Agent:** generic-subagent  
+**Agent:** typescript-architect  
 **Time:** 2 minutes  
 **Steps:**
 1. Create `src/lib/logger.ts`
@@ -135,7 +135,7 @@ This plan breaks down the Dispatch Raycast extension implementation into 2-5 min
 ---
 
 ### Task 1.4: Implement Config Auto-Discovery
-**Agent:** generic-subagent  
+**Agent:** typescript-architect  
 **Time:** 5 minutes  
 **Steps:**
 1. Create `src/lib/config.ts`
@@ -244,7 +244,7 @@ This plan breaks down the Dispatch Raycast extension implementation into 2-5 min
 ## Phase 3: Data Fetching Hooks
 
 ### Task 3.1: Implement useSessions Hook
-**Agent:** generic-subagent  
+**Agent:** react-architect  
 **Time:** 5 minutes  
 **Steps:**
 1. Create `src/hooks/useSessions.ts`
@@ -265,7 +265,7 @@ This plan breaks down the Dispatch Raycast extension implementation into 2-5 min
 ## Phase 4: Dispatch Command (Send Message)
 
 ### Task 4.1: Create Dispatch Form Component
-**Agent:** generic-subagent  
+**Agent:** raycast-builder  
 **Time:** 5 minutes  
 **Steps:**
 1. Create `src/dispatch.tsx`
@@ -283,7 +283,7 @@ This plan breaks down the Dispatch Raycast extension implementation into 2-5 min
 ---
 
 ### Task 4.2: Implement Send Message Action (Fire-and-Forget)
-**Agent:** generic-subagent  
+**Agent:** raycast-builder  
 **Time:** 4 minutes  
 **Steps:**
 1. In `src/dispatch.tsx`, add form submission handler
@@ -300,7 +300,7 @@ This plan breaks down the Dispatch Raycast extension implementation into 2-5 min
 ---
 
 ### Task 4.3: Implement Send Message Action (Wait for Response)
-**Agent:** generic-subagent  
+**Agent:** raycast-builder  
 **Time:** 4 minutes  
 **Steps:**
 1. In `src/dispatch.tsx`, add wait-response flow
@@ -319,7 +319,7 @@ This plan breaks down the Dispatch Raycast extension implementation into 2-5 min
 ## Phase 5: Sessions Command (Dashboard)
 
 ### Task 5.1: Create Sessions List View
-**Agent:** generic-subagent  
+**Agent:** raycast-builder  
 **Time:** 5 minutes  
 **Steps:**
 1. Create `src/sessions.tsx`
@@ -339,7 +339,7 @@ This plan breaks down the Dispatch Raycast extension implementation into 2-5 min
 ---
 
 ### Task 5.2: Add Session List Accessories
-**Agent:** generic-subagent  
+**Agent:** raycast-builder  
 **Time:** 4 minutes  
 **Steps:**
 1. In `src/sessions.tsx`, enhance List.Item with accessories
@@ -357,7 +357,7 @@ This plan breaks down the Dispatch Raycast extension implementation into 2-5 min
 ---
 
 ### Task 5.3: Implement Send Message Action from Sessions
-**Agent:** generic-subagent  
+**Agent:** raycast-builder  
 **Time:** 3 minutes  
 **Steps:**
 1. In `src/sessions.tsx`, add Action.Push to ActionPanel
@@ -372,7 +372,7 @@ This plan breaks down the Dispatch Raycast extension implementation into 2-5 min
 ---
 
 ### Task 5.4: Implement View History Action
-**Agent:** generic-subagent  
+**Agent:** raycast-builder  
 **Time:** 4 minutes  
 **Steps:**
 1. Create `src/components/SessionDetail.tsx`
@@ -393,7 +393,7 @@ This plan breaks down the Dispatch Raycast extension implementation into 2-5 min
 ---
 
 ### Task 5.5: Implement Model Override Actions
-**Agent:** generic-subagent  
+**Agent:** raycast-builder  
 **Time:** 3 minutes  
 **Steps:**
 1. In `src/sessions.tsx`, add conditional actions to ActionPanel:
@@ -412,7 +412,7 @@ This plan breaks down the Dispatch Raycast extension implementation into 2-5 min
 ## Phase 6: Extension Preferences
 
 ### Task 6.1: Define Extension Preferences
-**Agent:** generic-subagent  
+**Agent:** raycast-builder  
 **Time:** 2 minutes  
 **Steps:**
 1. Edit `package.json` to add preferences schema:
@@ -458,7 +458,7 @@ This plan breaks down the Dispatch Raycast extension implementation into 2-5 min
 ---
 
 ### Task 6.2: Integrate Preferences with Config
-**Agent:** generic-subagent  
+**Agent:** raycast-builder  
 **Time:** 2 minutes  
 **Steps:**
 1. Update `src/lib/config.ts` to read preferences using `getPreferenceValues()`
@@ -626,6 +626,33 @@ This plan breaks down the Dispatch Raycast extension implementation into 2-5 min
 
 ## Task Summary by Agent
 
+### raycast-builder (Raycast UI Components)
+- Task 1.1: Project setup
+- Task 4.1: Dispatch form
+- Task 4.2: Fire-and-forget send
+- Task 4.3: Wait-for-response send
+- Task 5.1: Sessions list view
+- Task 5.2: Session accessories
+- Task 5.3: Send from sessions
+- Task 5.4: View history action
+- Task 5.5: Model override actions
+- Task 6.1: Define preferences
+- Task 6.2: Integrate preferences
+
+**Total:** 11 tasks, ~37 minutes
+
+### react-architect (React Patterns & Hooks)
+- Task 3.1: useSessions hook
+
+**Total:** 1 task, ~5 minutes
+
+### typescript-architect (TypeScript Infrastructure)
+- Task 1.2: Type definitions
+- Task 1.3: Logger utility
+- Task 1.4: Config auto-discovery
+
+**Total:** 3 tasks, ~11 minutes
+
 ### fastapi-pro (API Client)
 - Task 2.1: Base API client
 - Task 2.2: sessions_list endpoint
@@ -642,28 +669,14 @@ This plan breaks down the Dispatch Raycast extension implementation into 2-5 min
 
 **Total:** 3 tasks, ~15 minutes
 
-### generic-subagent (TypeScript/React)
-- Task 1.1: Project setup
-- Task 1.2: Type definitions
-- Task 1.3: Logger utility
-- Task 1.4: Config auto-discovery
-- Task 3.1: useSessions hook
-- Task 4.1: Dispatch form
-- Task 4.2: Fire-and-forget send
-- Task 4.3: Wait-for-response send
-- Task 5.1: Sessions list view
-- Task 5.2: Session accessories
-- Task 5.3: Send from sessions
-- Task 5.4: View history action
-- Task 5.5: Model override actions
-- Task 6.1: Define preferences
-- Task 6.2: Integrate preferences
+### generic-subagent (Documentation & Polish)
 - Task 8.1: README
 - Task 8.2: Icon and assets
 - Task 8.3: CONTRIBUTING
 - Task 8.4: Final QA
+- Task 9.1: Raycast store submission
 
-**Total:** 19 tasks, ~61 minutes
+**Total:** 5 tasks, ~17 minutes
 
 ---
 
